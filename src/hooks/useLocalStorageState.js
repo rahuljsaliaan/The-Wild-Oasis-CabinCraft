@@ -1,16 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export function useLocalStorageState(initialState, key) {
-  const [value, setValue] = useState(function () {
-    const storedValue = localStorage.getItem(key);
-    return storedValue ? JSON.parse(storedValue) : initialState;
-  });
+  // NOTE: lazy initialization is possible only by passing call back function to the useState hooks
+  const [value, setValue] = useState(() =>
+    localStorage.getItem(key)
+      ? JSON.parse(localStorage.getItem(key))
+      : initialState
+  );
 
+  // * Dependencies (key: is for initial function call. value: is when value changes)
   useEffect(
     function () {
       localStorage.setItem(key, JSON.stringify(value));
     },
-    [value, key]
+    [key, value]
   );
 
   return [value, setValue];
