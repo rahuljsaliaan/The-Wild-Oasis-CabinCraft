@@ -1,5 +1,11 @@
+import { BrowserRouter, Routes } from "react-router-dom";
+
 function App() {
-  return <div>Hello World Wise</div>;
+  return (
+    <BrowserRouter>
+      <Routes></Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
