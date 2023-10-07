@@ -1,7 +1,7 @@
 /* Colors adapted from https://tailwindcss.com/docs/customizing-colors */
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 :root {
   /* Indigo */
   --color-brand-50: #eef2ff;
@@ -185,4 +185,4 @@ FOR DARK MODE
 */
 `;
 
-export default GlobalStyle;
+export default GlobalStyles;
