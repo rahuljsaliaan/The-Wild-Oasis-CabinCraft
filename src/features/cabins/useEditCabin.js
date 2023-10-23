@@ -5,15 +5,15 @@ import { createEditCabin } from "../../services/apiCabins";
 export function useEditCabin() {
   const queryClient = useQueryClient();
 
-  const { mutate: createCabin, isLoading: isCreating } = useMutation({
-    mutationFn: createEditCabin,
+  const { mutate: editCabin, isLoading: isEditing } = useMutation({
+    mutationFn: ({ newCabinData, id }) => createEditCabin(newCabinData, id),
     onSuccess: () => {
-      toast.success("New cabin successfully created");
+      toast.success("Cabin successfully edited");
       queryClient.invalidateQueries({ queryKey: ["cabins"] });
       // reset();
     },
     onError: (error) => toast.error(error.message),
   });
 
-  return { createCabin, isCreating };
+  return { editCabin, isEditing };
 }
