@@ -1,3 +1,7 @@
+/* eslint-disable react/prop-types */
+import { cloneElement, createContext, useContext, useState } from "react";
+import { createPortal } from "react-dom";
+import { HiXMark } from "react-icons/hi2";
 import styled from "styled-components";
 
 const StyledModal = styled.div`
@@ -48,3 +52,49 @@ const Button = styled.button`
     color: var(--color-grey-500);
   }
 `;
+
+const ModalContext = createContext();
+
+function Modal({ children }) {
+  const [openModalName, setOpenModalName] = useState("");
+
+  const closeModal = () => setOpenModalName("");
+
+  const openModal = setOpenModalName;
+
+  return (
+    <ModalContext.Provider value={{ openModalName, closeModal, openModal }}>
+      {children}
+    </ModalContext.Provider>
+  );
+}
+
+function Open({ opens, children }) {
+  const { openModal } = useContext(ModalContext);
+
+  return cloneElement(children, { onClick: () => openModal(opens) });
+}
+
+function Window({ render, name }) {
+  const { openModalName, closeModal } = useContext(ModalContext);
+  // NOTE: React portal places the html in a desired position of the dom tree but does not alter the component tree making it ideal for react developers to pass the props.
+
+  if (name !== openModalName) return null;
+
+  return createPortal(
+    <Overlay>
+      <StyledModal>
+        <Button onClick={closeModal}>
+          <HiXMark />
+        </Button>
+        <div>{render && render(closeModal)}</div>
+      </StyledModal>
+    </Overlay>,
+    document.body
+  );
+}
+
+Modal.Open = Open;
+Modal.Window = Window;
+
+export default Modal;
