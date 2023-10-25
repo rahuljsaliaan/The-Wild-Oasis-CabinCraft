@@ -24,6 +24,15 @@ function CabinTable() {
   if (filterValue === "with-discount")
     filteredCabins = cabins.filter((cabin) => cabin.discount > 0);
 
+  const sortBy = searchParams.get("sortBy") || "startDate-asc";
+  const [field, direction] = sortBy.split("-");
+
+  // NOTE: this modifier trick is to make the sorting either in ascending or descending order
+  const modifier = direction === "asc" ? 1 : -1;
+  const sortedCabins = filteredCabins.sort(
+    (a, b) => (a[field] - b[field]) * modifier
+  );
+
   return (
     <Menus>
       <Table columns="0.6fr 1.8fr 2.2fr 1fr 1fr 1fr">
@@ -37,9 +46,9 @@ function CabinTable() {
         </Table.Header>
 
         <Table.Body
-          data={filteredCabins}
-          render={(filteredCabin) => (
-            <CabinRow key={filteredCabin.id} cabin={filteredCabin} />
+          data={sortedCabins}
+          render={(sortedCabin) => (
+            <CabinRow key={sortedCabin.id} cabin={sortedCabin} />
           )}
         />
       </Table>
