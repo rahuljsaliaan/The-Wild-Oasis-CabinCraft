@@ -3,6 +3,7 @@ import { cloneElement, createContext, useContext, useState } from "react";
 import { createPortal } from "react-dom";
 import { HiXMark } from "react-icons/hi2";
 import styled from "styled-components";
+import { useOutsideClick } from "../hooks/useOutsideClick";
 
 const StyledModal = styled.div`
   position: fixed;
@@ -75,19 +76,28 @@ function Open({ opens, children }) {
   return cloneElement(children, { onClick: () => openModal(opens) });
 }
 
-function Window({ render, name }) {
+function Window({ /*render,*/ name, children }) {
   const { openModalName, closeModal } = useContext(ModalContext);
   // NOTE: React portal places the html in a desired position of the dom tree but does not alter the component tree making it ideal for react developers to pass the props.
+
+  const ref = useOutsideClick(closeModal);
 
   if (name !== openModalName) return null;
 
   return createPortal(
-    <Overlay>
-      <StyledModal>
+    <Overlay /*onClick={closeModal}*/>
+      {/* Another way to prevent the child components from triggering the closeModal through bubbling */}
+      <StyledModal
+        ref={ref}
+        // onClick={(event) => {
+        //   event.stopPropagation();
+        // }}
+      >
         <Button onClick={closeModal}>
           <HiXMark />
         </Button>
-        <div>{render && render(closeModal)}</div>
+        {/* <div>{render && render(closeModal)}</div> */}
+        <div>{cloneElement(children, { onCloseModal: closeModal })}</div>
       </StyledModal>
     </Overlay>,
     document.body

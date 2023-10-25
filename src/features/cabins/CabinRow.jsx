@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import { formatCurrency } from "../../utils/helpers";
-import { useState } from "react";
 import { useDeleteCabin } from "./useDeleteCabin";
 import { HiPencil, HiSquare2Stack, HiTrash } from "react-icons/hi2";
 import { useCreateCabin } from "./useCreateCabin";
 import styled from "styled-components";
 import CreateCabinForm from "./CreateCabinForm";
+import Modal from "../../ui/Modal";
+import ConfirmDelete from "../../ui/ConfirmDelete";
 
 const TableRow = styled.div`
   display: grid;
@@ -47,8 +48,6 @@ const Discount = styled.div`
 `;
 
 function CabinRow({ cabin }) {
-  const [showForm, setShowForm] = useState(false);
-
   const {
     id: cabinId,
     name,
@@ -92,18 +91,32 @@ function CabinRow({ cabin }) {
           <button disabled={isWorking} onClick={handleCreateDuplicate}>
             <HiSquare2Stack />
           </button>
-          <button
-            disabled={isWorking}
-            onClick={() => setShowForm((show) => !show)}
-          >
-            <HiPencil />
-          </button>
-          <button disabled={isWorking} onClick={() => deleteCabin(cabinId)}>
-            <HiTrash />
-          </button>
+
+          <Modal>
+            <Modal.Open opens="edit-cabin-form">
+              <button disabled={isWorking}>
+                <HiPencil />
+              </button>
+            </Modal.Open>
+            <Modal.Window name="edit-cabin-form">
+              <CreateCabinForm cabinToEdit={cabin} />
+            </Modal.Window>
+
+            <Modal.Open opens="delete-cabin">
+              <button disabled={isWorking}>
+                <HiTrash />
+              </button>
+            </Modal.Open>
+            <Modal.Window name="delete-cabin">
+              <ConfirmDelete
+                resourceName={`cabin '${name}'`}
+                onConfirm={() => deleteCabin(cabinId)}
+                disabled={isWorking}
+              />
+            </Modal.Window>
+          </Modal>
         </div>
       </TableRow>
-      {showForm && <CreateCabinForm cabinToEdit={cabin} />}
     </>
   );
 }
