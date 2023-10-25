@@ -8,6 +8,7 @@ import CreateCabinForm from "./CreateCabinForm";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import Table from "../../ui/Table";
+import Menus from "../../ui/Menus";
 
 const Img = styled.img`
   display: block;
@@ -64,6 +65,7 @@ function CabinRow({ cabin }) {
     });
   }
 
+  // Using nested compounded components
   return (
     <Table.Row>
       <Img src={image} />
@@ -76,32 +78,40 @@ function CabinRow({ cabin }) {
         <span>&mdash;</span>
       )}
       <div>
-        <button disabled={isWorking} onClick={handleCreateDuplicate}>
-          <HiSquare2Stack />
-        </button>
-
         <Modal>
-          <Modal.Open opens="edit-cabin-form">
-            <button disabled={isWorking}>
-              <HiPencil />
-            </button>
-          </Modal.Open>
-          <Modal.Window name="edit-cabin-form">
-            <CreateCabinForm cabinToEdit={cabin} />
-          </Modal.Window>
+          <Menus.Menu>
+            <Menus.Toggle id={cabinId} />
 
-          <Modal.Open opens="delete-cabin">
-            <button disabled={isWorking}>
-              <HiTrash />
-            </button>
-          </Modal.Open>
-          <Modal.Window name="delete-cabin">
-            <ConfirmDelete
-              resourceName={`cabin '${name}'`}
-              onConfirm={() => deleteCabin(cabinId)}
-              disabled={isWorking}
-            />
-          </Modal.Window>
+            {/* Menus Button List */}
+            <Menus.List id={cabinId}>
+              <Menus.Button
+                icon={<HiSquare2Stack />}
+                onClick={handleCreateDuplicate}
+              >
+                Duplicate
+              </Menus.Button>
+              <Modal.Open opens="edit-cabin-form">
+                <Menus.Button icon={<HiPencil />}>Edit</Menus.Button>
+              </Modal.Open>
+              <Modal.Open opens="delete-cabin">
+                <Menus.Button icon={<HiTrash />}>Delete</Menus.Button>
+              </Modal.Open>
+            </Menus.List>
+
+            {/* NOTE: the reason why the modal window is not placed withing the menulist is that it will create a problem while opening the window */}
+            {/* Modal Window */}
+            <Modal.Window name="edit-cabin-form">
+              <CreateCabinForm cabinToEdit={cabin} />
+            </Modal.Window>
+
+            <Modal.Window name="delete-cabin">
+              <ConfirmDelete
+                resourceName={`cabin '${name}'`}
+                onConfirm={() => deleteCabin(cabinId)}
+                disabled={isWorking}
+              />
+            </Modal.Window>
+          </Menus.Menu>
         </Modal>
       </div>
     </Table.Row>

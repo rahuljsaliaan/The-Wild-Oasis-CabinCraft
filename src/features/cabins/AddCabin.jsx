@@ -7,11 +7,11 @@ function AddCabin() {
   return (
     <>
       <Modal>
-        <Modal.Open opens="cabin-form">
-          <div>
+        <div>
+          <Modal.Open opens="cabin-form">
             <Button>Add new Cabin</Button>
-          </div>
-        </Modal.Open>
+          </Modal.Open>
+        </div>
         {/* <Modal.Window
           name="cabin-form"
           render={(closeModal) => {
