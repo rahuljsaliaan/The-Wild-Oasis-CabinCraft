@@ -8,6 +8,7 @@ import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
 import FormRow from "../../ui/FormRow";
+import SpinnerMini from "../../ui/SpinnerMini";
 
 function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   const { id: editId, ...editValues } = cabinToEdit;
@@ -52,10 +53,6 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
       }
     );
   }
-
-  // function onError(errors) {
-  //   console.error(errors);
-  // }
 
   return (
     <Form
@@ -156,7 +153,15 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
           Cancel
         </Button>
         <Button disabled={isWorking}>
-          {isEditSession ? "Edit cabin" : "Create new cabin"}
+          {!isWorking ? (
+            isEditSession ? (
+              "Edit cabin"
+            ) : (
+              "Create new cabin"
+            )
+          ) : (
+            <SpinnerMini />
+          )}
         </Button>
       </FormRow>
     </Form>

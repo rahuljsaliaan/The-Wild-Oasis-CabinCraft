@@ -72,7 +72,6 @@ function Menus({ children }) {
   const [position, setPosition] = useState({});
 
   const closeMenu = () => setOpenId("");
-
   const openMenu = setOpenId;
 
   return (
