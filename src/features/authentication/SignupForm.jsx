@@ -18,12 +18,7 @@ function SignupForm() {
   function onSubmit(data) {
     const { fullName, email, password } = data;
 
-    signup(
-      { fullName, email, password },
-      {
-        onSettled: reset,
-      }
-    );
+    signup({ fullName, email, password });
   }
 
   return (
@@ -87,7 +82,12 @@ function SignupForm() {
 
       <FormRow>
         {/* type is an HTML attribute! */}
-        <Button disabled={isLoading} variation="secondary" type="reset">
+        <Button
+          disabled={isLoading}
+          variation="secondary"
+          type="reset"
+          onClick={reset}
+        >
           Cancel
         </Button>
         <Button disabled={isLoading}>
