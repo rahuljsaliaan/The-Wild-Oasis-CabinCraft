@@ -1,4 +1,4 @@
-# The Wild Oasis - Online Cabin (Hotel) Management System
+# The Wild Oasis Cabin Craft - Online Cabin (Hotel) Management System
 
 [![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=the-wild-oasis-rahuljsaliaan)](https://vercel.com/rahul-js-projects/the-wild-oasis/ENBFeWK9EeRSABVmxgbtJvnGeAzG)
 
