@@ -94,15 +94,19 @@ function Pagination({ count }) {
       </P>
 
       <Buttons>
-        <PaginationButton onClick={previousPage} disabled={currentPage === 1}>
-          <HiChevronLeft /> <span>Previous</span>
-        </PaginationButton>
-        <PaginationButton
-          onClick={nextPage}
-          disabled={currentPage === pageCount}
-        >
-          <HiChevronRight /> <span>Next</span>
-        </PaginationButton>
+        {currentPage !== 1 && (
+          <PaginationButton onClick={previousPage} disabled={currentPage === 1}>
+            <HiChevronLeft /> <span>Previous</span>
+          </PaginationButton>
+        )}
+        {currentPage !== pageCount && (
+          <PaginationButton
+            onClick={nextPage}
+            disabled={currentPage === pageCount}
+          >
+            <HiChevronRight /> <span>Next</span>
+          </PaginationButton>
+        )}
       </Buttons>
     </StyledPagination>
   );

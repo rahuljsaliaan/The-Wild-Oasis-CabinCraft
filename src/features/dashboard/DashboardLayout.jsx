@@ -4,6 +4,7 @@ import { useCabins } from "../cabins/useCabins";
 import styled from "styled-components";
 import Spinner from "../../ui/Spinner";
 import Stats from "./Stats";
+import SalesChart from "./SalesChart";
 
 const StyledDashboardLayout = styled.div`
   display: grid;
@@ -34,6 +35,7 @@ function DashboardLayout() {
         numDays={numDays}
         numCabins={cabins.length}
       />
+      <SalesChart bookings={bookings} numDays={numDays} />
     </StyledDashboardLayout>
   );
 }

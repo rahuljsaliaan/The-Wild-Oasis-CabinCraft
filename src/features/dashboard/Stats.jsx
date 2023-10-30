@@ -12,8 +12,6 @@ function Stats({ bookings, confirmedStays, numDays, numCabins }) {
   // 1.
   const numBookings = bookings.length;
 
-  console.log(bookings);
-
   // 2.
   const sales = formatCurrency(
     bookings.reduce((acu, cur) => acu + cur.totalPrice, 0)
