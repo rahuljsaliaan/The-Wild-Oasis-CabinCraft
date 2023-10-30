@@ -6,7 +6,7 @@ Welcome to The Wild Oasis, your all-in-one online cabin and hotel management sys
 
 ## Live App
 
-Experience the power of The Wild Oasis by exploring our live demo of the project [🏡 <span style="font-weight: bold; text-decoration: underline; font-size: 1.2em;">Explore The Wild Oasis</span> 🌄](YOUR_APP_DEPLOYMENT_URL).
+Experience the power of The Wild Oasis by exploring our live demo of the project [🏡 <span style="font-weight: bold; text-decoration: underline; font-size: 1.2em;">Explore The Wild Oasis</span> 🌄](https://the-wild-oasis-rahuljsaliaan.vercel.app/).
 
 ## Features
 
