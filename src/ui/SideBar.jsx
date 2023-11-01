@@ -19,7 +19,7 @@ const StyledSideBar = styled.aside`
 `;
 
 const MenuButtonContainer = styled.div`
-  padding-right: 1.3rem;
+  padding-right: 1.4rem;
   text-align: right;
 `;
 
