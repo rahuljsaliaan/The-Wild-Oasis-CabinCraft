@@ -1,8 +1,44 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/"
+      "source": "/dashboard",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/bookings",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/booking/:bookingId",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/checkin/:bookingId",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/cabins",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/users",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/settings",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/account",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:any*",
+      "destination": "/index.html"
     }
   ]
 }
