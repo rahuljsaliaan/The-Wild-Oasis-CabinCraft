@@ -9,7 +9,6 @@ import {
 } from "react-icons/hi2";
 import styled from "styled-components";
 import { Tooltip } from "react-tooltip";
-import { useSideBar } from "../context/SideBarContext";
 
 const NavList = styled.ul`
   display: flex;
@@ -59,9 +58,7 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-function MainNav() {
-  const { isOpen } = useSideBar();
-
+function MainNav({ isOpen }) {
   return (
     <>
       <nav>

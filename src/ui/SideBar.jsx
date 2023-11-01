@@ -34,8 +34,8 @@ function SideBar() {
           onClick={() => setIsOpen((open) => !open)}
         />
       </MenuButtonContainer>
-      <Logo />
-      <MainNav />
+      <Logo isOpen={isOpen} />
+      <MainNav isOpen={isOpen} />
     </StyledSideBar>
   );
 }

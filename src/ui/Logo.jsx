@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 import { useDarkMode } from "../context/DarkModeContext";
-import { useSideBar } from "../context/SideBarContext";
 
 const StyledLogo = styled.div`
   text-align: center;
@@ -17,9 +16,7 @@ const Img = styled.img`
   ${(props) => props.status === "close" && "height: 4rem"}
 `;
 
-function Logo() {
-  const { isOpen } = useSideBar();
-
+function Logo({ isOpen }) {
   const { isDarkMode } = useDarkMode();
 
   const imageSrc = isOpen
