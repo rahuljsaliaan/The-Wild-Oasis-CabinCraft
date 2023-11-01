@@ -1,11 +1,10 @@
+import { useSideBar } from "../context/SideBarContext";
+import { HiOutlineArrowLeft, HiOutlineBars3 } from "react-icons/hi2";
 import styled from "styled-components";
 import Logo from "./Logo";
 import MainNav from "./MainNav";
 // import Uploader from "../data/Uploader";
 import MenuButton from "./MenuButton";
-import { HiOutlineArrowLeft, HiOutlineBars3 } from "react-icons/hi2";
-
-import { useSideBar } from "../context/SideBarContext";
 
 const StyledSideBar = styled.aside`
   background-color: var(--color-grey-0);
@@ -29,14 +28,14 @@ function SideBar() {
 
   return (
     <StyledSideBar>
-      <MenuButtonContainer isOpen={isOpen}>
+      <MenuButtonContainer>
         <MenuButton
           icon={isOpen ? <HiOutlineArrowLeft /> : <HiOutlineBars3 />}
           onClick={() => setIsOpen((open) => !open)}
         />
       </MenuButtonContainer>
-      <Logo isOpen={isOpen} />
-      <MainNav isOpen={isOpen} />
+      <Logo />
+      <MainNav />
     </StyledSideBar>
   );
 }

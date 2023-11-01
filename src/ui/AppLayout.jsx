@@ -12,7 +12,7 @@ const StyledAppLayout = styled.div`
 
   transition: grid-template-columns ease 0.3s;
 
-  ${(props) => props.isOpen || "grid-template-columns: 10rem 1fr"}
+  ${(props) => props.status === "close" && "grid-template-columns: 10rem 1fr"}
 `;
 
 const Main = styled.main`
@@ -33,7 +33,7 @@ function AppLayout() {
   const { isOpen } = useSideBar();
 
   return (
-    <StyledAppLayout isOpen={isOpen}>
+    <StyledAppLayout status={isOpen ? "open" : "close"}>
       <Header />
       <SideBar />
       <Main>
