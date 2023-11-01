@@ -21,9 +21,9 @@ function Logo({ isOpen }) {
 
   const imageSrc = isOpen
     ? isDarkMode
-      ? "logo-dark.png"
-      : "logo-light.png"
-    : "logo.png";
+      ? "/public/logo-dark.png"
+      : "/public/logo-light.png"
+    : "/public/logo.png";
 
   return (
     <StyledLogo>
