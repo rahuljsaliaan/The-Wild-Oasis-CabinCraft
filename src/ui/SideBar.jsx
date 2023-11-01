@@ -3,7 +3,6 @@ import { HiOutlineArrowLeft, HiOutlineBars3 } from "react-icons/hi2";
 import styled from "styled-components";
 import Logo from "./Logo";
 import MainNav from "./MainNav";
-// import Uploader from "../data/Uploader";
 import MenuButton from "./MenuButton";
 
 const StyledSideBar = styled.aside`
