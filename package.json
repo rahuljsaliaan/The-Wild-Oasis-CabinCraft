@@ -10,6 +10,8 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "author": "Rahul J",
+  "license": "ISC",
   "dependencies": {
     "@supabase/supabase-js": "^2.38.0",
     "@tanstack/react-query": "^4.36.1",
@@ -37,7 +39,5 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "vite": "^4.4.5",
     "vite-plugin-eslint": "^1.8.1"
-  },
-  "author": "Rahul J",
-  "license": "ISC"
+  }
 }
