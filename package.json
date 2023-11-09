@@ -2,6 +2,7 @@
   "name": "the-wild-oasis",
   "private": true,
   "version": "0.0.0",
+  "description": "The Wild Oasis is a powerful online cabin and hotel management system designed for streamlined bookings, comprehensive data management, and modern dashboard insights. Securely log in, manage bookings, and customize settings with ease, all in one user-friendly platform.",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -36,5 +37,7 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "vite": "^4.4.5",
     "vite-plugin-eslint": "^1.8.1"
-  }
+  },
+  "author": "Rahul J",
+  "license": "ISC"
 }
