@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "author": "Rahul J",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@supabase/supabase-js": "^2.38.0",
     "@tanstack/react-query": "^4.36.1",
