@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Logo from "./Logo";
 import MainNav from "./MainNav";
 import MenuButton from "./MenuButton";
+import Uploader from "../data/Uploader";
 
 const StyledSideBar = styled.aside`
   background-color: var(--color-grey-0);
@@ -35,6 +36,7 @@ function SideBar() {
       </MenuButtonContainer>
       <Logo isOpen={isOpen} />
       <MainNav isOpen={isOpen} />
+      <Uploader />
     </StyledSideBar>
   );
 }
