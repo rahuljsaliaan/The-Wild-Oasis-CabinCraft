@@ -9,7 +9,7 @@ export function useSignup() {
     mutationFn: signupApi,
 
     onSuccess: () => {
-      navigate("/user");
+      navigate("/users");
       toast.success(
         "Account successfully created! Please verify the new account from the user's email address"
       );
