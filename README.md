@@ -1,12 +1,12 @@
-# The Wild Oasis Cabin Craft - Online Cabin (Hotel) Management System
+# Home Seekers Cabin Craft - Online Cabin (Hotel) Management System
 
 [![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=the-wild-oasis-rahuljsaliaan)](https://vercel.com/rahul-js-projects/the-wild-oasis/ENBFeWK9EeRSABVmxgbtJvnGeAzG)
 
-Welcome to The Wild Oasis, your all-in-one online cabin and hotel management system. Our platform is designed to streamline the management of cabins and hotels, making it easy for employees to handle daily tasks and provide a seamless experience for guests. Whether you're managing bookings, monitoring statistics, or modifying cabin data, The Wild Oasis has you covered.
+Welcome to Home Seekers, your all-in-one online cabin and hotel management system. Our platform is designed to streamline the management of cabins and hotels, making it easy for employees to handle daily tasks and provide a seamless experience for guests. Whether you're managing bookings, monitoring statistics, or modifying cabin data, Home Seekers has you covered.
 
 ## Live App
 
-Experience the power of The Wild Oasis by exploring our live demo of the project [🏡 <span style="font-weight: bold; text-decoration: underline; font-size: 1.2em;">Explore The Wild Oasis</span> 🌄](https://the-wild-oasis-rahuljsaliaan.vercel.app/).
+Experience the power of Home Seekers by exploring our live demo of the project [🏡 <span style="font-weight: bold; text-decoration: underline; font-size: 1.2em;">Explore Home Seekers</span> 🌄](https://the-wild-oasis-rahuljsaliaan.vercel.app/).
 
 ## Features
 
@@ -53,8 +53,8 @@ Experience the power of The Wild Oasis by exploring our live demo of the project
 
 ## Continuous Deployment
 
-The Wild Oasis is hosted on Vercel for continuous deployment, ensuring that the application is always up-to-date with the latest features and improvements.
+Home Seekers is hosted on Vercel for continuous deployment, ensuring that the application is always up-to-date with the latest features and improvements.
 
 ---
 
-Thank you for choosing The Wild Oasis for your cabin and hotel management needs. We believe you'll find our application powerful and user-friendly. If you have any questions or feedback, please don't hesitate to reach out to us. Streamline your cabin and hotel management with The Wild Oasis! 🏨🌟📊.
+Thank you for choosing Home Seekers for your cabin and hotel management needs. We believe you'll find our application powerful and user-friendly. If you have any questions or feedback, please don't hesitate to reach out to us. Streamline your cabin and hotel management with Home Seekers! 🏨🌟📊.

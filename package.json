@@ -2,7 +2,7 @@
   "name": "the-wild-oasis",
   "private": true,
   "version": "1.0.0",
-  "description": "The Wild Oasis is a powerful online cabin and hotel management system designed for streamlined bookings, comprehensive data management, and modern dashboard insights. Securely log in, manage bookings, and customize settings with ease, all in one user-friendly platform",
+  "description": "Home Seekers is a powerful online cabin and hotel management system designed for streamlined bookings, comprehensive data management, and modern dashboard insights. Securely log in, manage bookings, and customize settings with ease, all in one user-friendly platform",
   "type": "module",
   "scripts": {
     "dev": "vite",

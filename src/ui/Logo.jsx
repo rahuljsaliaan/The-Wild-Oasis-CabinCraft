@@ -7,6 +7,7 @@ const StyledLogo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 `;
 
 const Img = styled.img`
@@ -14,6 +15,12 @@ const Img = styled.img`
   width: auto;
 
   ${(props) => props.status === "close" && "height: 4rem"}
+`;
+
+const LogoTitle = styled.h1`
+  font-family: "Sono";
+  font-size: 2rem;
+  font-weight: 500;
 `;
 
 function Logo({ isOpen }) {
@@ -28,6 +35,7 @@ function Logo({ isOpen }) {
   return (
     <StyledLogo>
       <Img src={imageSrc} alt="Logo" status={isOpen ? "open" : "close"} />
+      <LogoTitle>Home Seekers</LogoTitle>
     </StyledLogo>
   );
 }
